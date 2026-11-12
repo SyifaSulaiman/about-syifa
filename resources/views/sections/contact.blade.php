@@ -1,0 +1,3 @@
+<section class="section-wrap contact-section" id="contact" aria-labelledby="contact-title">
+    <div class="contact-paper"><span class="contact-sticker" aria-hidden="true">LET’S<br>CONNECT</span><p class="eyebrow">The last page (for now)</p><h2 id="contact-title">Have a question<br>or an idea?</h2><p class="contact-copy">I’d be happy to hear from you. Add the best way to reach you below.</p><p class="contact-email">[Your email address]</p><div class="contact-links"><span>[Professional profile link]</span><span>[Relevant link]</span></div><span class="contact-doodle" aria-hidden="true">♡</span></div>
+</section>
