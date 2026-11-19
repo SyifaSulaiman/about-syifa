@@ -56,3 +56,23 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+## Static portfolio build
+
+The Blade portfolio remains the source of truth. Build the deployable static site with:
+
+```sh
+npm run build:static
+```
+
+This builds the existing Vite assets, renders the Blade homepage at build time, and writes the deployable site to `dist/`. It requires the existing Node dependencies, Composer dependencies, PHP 8.3 or later, and Composer. The generated site does not need PHP or Laravel at runtime. The exporter copies only the rendered page, production assets, public images, favicon, and robots file; it does not copy `.env`, Laravel source, dependencies, database files, or tests.
+
+Run the static checks separately with `npm run check:static`. To preview the generated output without Laravel, run `npm run preview:static` and open `http://127.0.0.1:4173/portfolio/`.
+
+### GitHub Pages
+
+Use a GitHub Actions publishing workflow with the repository's publishing source set to **GitHub Actions**. The workflow needs PHP 8.3+, Composer, and Node, runs `composer install`, `npm ci`, and `npm run build:static`, then uploads `dist/` as the Pages artifact and deploys it. See [GitHub's custom workflow guide](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages).
+
+### Cloudflare Pages
+
+For a prebuilt deployment, create a Pages project with **Direct Upload** and upload a ZIP of the contents of `dist/` (the `index.html` file must be at the ZIP root). Cloudflare's current Pages build image does not list PHP 8.3, which this Blade build step needs, so generate `dist/` locally or in a PHP-enabled CI environment before uploading. See [Cloudflare's Direct Upload guide](https://developers.cloudflare.com/pages/get-started/direct-upload/).

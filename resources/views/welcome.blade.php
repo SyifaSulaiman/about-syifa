@@ -6,6 +6,8 @@
     <meta name="theme-color" content="#f8f1e8">
     <meta name="description" content="A personal portfolio and creative journal.">
     <title>Personal Journal & Portfolio</title>
+    <link rel="icon" href="{{ asset('favicon.ico') }}">
+    @fonts
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body>
