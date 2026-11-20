@@ -75,7 +75,7 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 500; }
 .placeholder-hint code { color: var(--burgundy); font-size: .65rem; }
 .placeholder-photo, .project-photo, .gallery-photo { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 35%; }
 .placeholder-photo { position: absolute; inset: 0; }
-.project-photo { position: absolute; inset: 0; }
+.project-photo { position: absolute; inset: 0; object-fit: contain; }
 .gallery-photo { position: absolute; inset: 0; }
 .gallery-image { position: relative; overflow: hidden; }
 .portrait-caption { display: block; padding-top: .75rem; color: var(--muted); font-family: var(--font-display); font-size: .82rem; font-style: italic; text-align: center; }
@@ -143,6 +143,7 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 500; }
 .experience-feature { display: grid; grid-template-columns: .72fr 1.28fr; gap: clamp(2rem, 7vw, 6rem); align-items: center; padding: clamp(1.2rem, 4vw, 3rem); border: 1px solid #e0c3c0; border-radius: 4px 24px 4px 24px; background: var(--paper-light); box-shadow: var(--shadow-paper); }
 .experience-side { position: relative; }
 .experience-image { min-height: 300px; aspect-ratio: 4 / 4.4; }
+.experience-image .placeholder-photo { object-fit: contain; }
 .experience-caption { display: block; margin-top: .8rem; color: var(--muted); font-family: var(--font-display); font-size: .83rem; font-style: italic; }
 .experience-stamp { position: absolute; z-index: 2; top: -1.3rem; right: -1.1rem; display: grid; width: 72px; height: 72px; place-content: center; border: 1px solid var(--cherry); border-radius: 50%; background: var(--paper-light); color: var(--cherry); font-size: .57rem; font-weight: 800; letter-spacing: .1em; line-height: 1.4; text-align: center; transform: rotate(10deg); }
 .experience-details h3 { margin: .45rem 0 .7rem; color: var(--burgundy); font-size: clamp(3rem, 6vw, 5rem); line-height: 1; }

@@ -1,6 +1,6 @@
-@props(['number', 'date', 'title', 'description', 'contributions', 'tools', 'tone' => 'rose', 'image' => null])
+@props(['number', 'date', 'title', 'description', 'contributions', 'tools', 'tone' => 'rose', 'image' => null, 'imageAlt' => 'Project image'])
 <article class="project-card project-card--{{ $tone }}">
-    <div class="project-visual"><span class="visual-index">PROJECT {{ $number }}</span>@if($image)<img class="project-photo" src="{{ asset('images/projects/'.$image) }}" alt="[Description of project image]">@else{{ $visual ?? '' }}@endif</div>
+    <div class="project-visual"><span class="visual-index">PROJECT {{ $number }}</span>@if($image)<img class="project-photo" src="{{ asset('images/projects/'.$image) }}" alt="{{ $imageAlt }}">@else{{ $visual ?? '' }}@endif</div>
     <div class="project-copy">
         <p class="eyebrow">{{ $date }}</p>
         <h3>{{ $title }}</h3>
